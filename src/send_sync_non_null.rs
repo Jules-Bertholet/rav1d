@@ -91,6 +91,7 @@ impl<T: ?Sized + Send + Sync> SendSyncNonNull<T> {
     }
 }
 
+// Don't `derive` in order to avoid `T: Debug` bound
 impl<T: ?Sized> fmt::Debug for SendSyncNonNull<T> {
     #[inline]
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
